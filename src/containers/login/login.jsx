@@ -54,18 +54,18 @@ class Login extends Component {
             return <Redirect to={redirectTo}/>
         }
         return (
-            <div>
-                <NavBar>友羽招聘</NavBar>
+            <div style = {{background:"#FFFFFF",height:"100%"}}>
+                <NavBar>校园招聘</NavBar>
                 <Logo/>
                 <WingBlank>
                     <List>
                         <WhiteSpace/>
-                        <InputItem placeholder='输入用户名'  onChange={val => {this.handleChange('username', val)}}>用户名:</InputItem>
+                            <InputItem placeholder='输入用户名'  onChange={val => {this.handleChange('username', val)}}>用户名:</InputItem>
                         <WhiteSpace/>
                         <InputItem type='password' placeholder='输入密码'  onChange={val => {this.handleChange('password', val)}}>密&nbsp;&nbsp;&nbsp;码:</InputItem>
-                        <WhiteSpace/>
+                            <WhiteSpace/>
                         <Button type='primary' onClick={this.login}>登&nbsp;&nbsp;&nbsp;陆</Button>
-                        <WhiteSpace/>
+                            <WhiteSpace/>
                         <Button onClick={this.toRegister}>还没有账号</Button>
                     </List>
                 </WingBlank>
