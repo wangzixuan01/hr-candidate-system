@@ -12,7 +12,8 @@ class BossInfo extends Component {
         post: '', // 职位
         info: '', // 个人或职位简介
         company: '', // 公司名称
-        salary: '' // 公司名称
+        salary: '', // 
+        infoType:'boss'
     }
     handleChange = (name, val) => {
         this.setState({

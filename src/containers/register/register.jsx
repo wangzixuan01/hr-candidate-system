@@ -55,16 +55,16 @@ class Register extends Component {
         }
         return (
             <div>
-                <NavBar>友羽招聘</NavBar>
+                <NavBar>校园招聘</NavBar>
                 <Logo/>
                 <WingBlank>
                     <List>
                         <WhiteSpace/>
-                        <InputItem placeholder='请输入用户名' onChange={val => this.handleChange('username', val)}>用户名:</InputItem>
+                            <InputItem placeholder='请输入用户名' onChange={val => this.handleChange('username', val)}>用户名:</InputItem>
                         <WhiteSpace/>
-                        <InputItem type='password' placeholder='请输入密码' onChange={val => this.handleChange('password', val)}>密&nbsp;&nbsp;&nbsp;码:</InputItem>
+                            <InputItem type='password' placeholder='请输入密码' onChange={val => this.handleChange('password', val)}>密&nbsp;&nbsp;&nbsp;码:</InputItem>
                         <WhiteSpace/>
-                        <InputItem type='password' placeholder='请确认密码' onChange={val => this.handleChange('password2', val)}>确认密码:</InputItem>
+                            <InputItem type='password' placeholder='请确认密码' onChange={val => this.handleChange('password2', val)}>确认密码:</InputItem>
                         <WhiteSpace/>
                         <List.Item>
                             <span style={{marginRight: 30}}>用户类型:</span>
@@ -73,7 +73,7 @@ class Register extends Component {
                             <Radio checked={this.state.type === 'Boss'} onClick = {() => this.handleChange('type', 'Boss')}>Boss</Radio>
                         </List.Item>
                         <WhiteSpace/>
-                        <Button  type='primary'  onClick={this.register}>注&nbsp;&nbsp;&nbsp;册</Button>
+                            <Button  type='primary'  onClick={this.register}>注&nbsp;&nbsp;&nbsp;册</Button>
                         <WhiteSpace/>
                         <Button onClick={this.toLogin}>已有账号</Button>
                     </List>

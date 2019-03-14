@@ -10,7 +10,14 @@ class JobSeekerInfo extends Component {
     state = {
         header: '', // 头像名称
         post: '', // 职位
+        experience:'',
+        education:'',
+        salary:'',
+        city:'',
+        phone:'',
+        email:'',
         info: '', // 个人或职位简介
+        infoType:'jobSeeker'
     }
     handleChange = (name, val) => {
         this.setState({
@@ -36,11 +43,17 @@ class JobSeekerInfo extends Component {
         }
         return (
             <div>
-                <NavBar>JobSeeker信息完善</NavBar>
+                <NavBar>求职者资料完善</NavBar>
                 <HeaderSelector setHeader={this.setHeader} />
                 <List>
-                    <InputItem placeholder='请输入求职岗位' onChange={val => {this.handleChange('post', val)}}>求职岗位:</InputItem>          
-                    <TextareaItem title='个人介绍'  placeholder='请输入个人介绍' rows={3} onChange={val => {this.handleChange('info', val)}}></TextareaItem>      
+                    <InputItem placeholder='请输入求职岗位' onChange={val => {this.handleChange('post', val)}}>求职岗位:</InputItem>
+                    <InputItem placeholder='请输入工作经历' onChange={val => {this.handleChange('experience', val)}}>工作经历:</InputItem>
+                    <InputItem placeholder='请输入教育经历' onChange={val => {this.handleChange('education', val)}}>教育经历:</InputItem>
+                    <InputItem placeholder='请输入期望薪资' onChange={val => {this.handleChange('salary', val)}}>期望薪资:</InputItem>
+                    <InputItem placeholder='请输入期望城市' onChange={val => {this.handleChange('city', val)}}>期望城市:</InputItem>
+                    <InputItem placeholder='请输入电话' onChange={val => {this.handleChange('phone', val)}}>电话:</InputItem>
+                    <InputItem placeholder='请输入邮箱' onChange={val => {this.handleChange('email', val)}}>邮箱:</InputItem>
+                    <TextareaItem title='自我描述'  placeholder='请输入自我描述' rows={3} onChange={val => {this.handleChange('info', val)}}></TextareaItem>      
                     <Button type='primary' onClick={this.save}>保&nbsp;&nbsp;&nbsp;存</Button>
                 </List>
             </div>

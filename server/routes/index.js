@@ -13,7 +13,7 @@ router.post('/register', function (req, res) {
         } else {
             new UserModel({username, type, password:md5(password)}).save(function (err, user) {
                 res.cookie('userid', user._id, {maxAge: 1000*60*60*24*7});
-                res.send({code: 0, data: {_id: user._id, username, type}});
+                res.send({code: 0, data: {ceshi:"test",_id: user._id, username, type}});
             })
         }
     })
@@ -40,7 +40,7 @@ router.post('/update', function (req, res) {
     }
     // 更新数据库中对应的数据
     const user = req.body;
-    UserModel.findByIdAndUpdate({_id: userid}, req.body, function (err, oldUser) {// user是数据库中原来的数据
+    UserModel.findByIdAndUpdate({_id: userid}, user, function (err, oldUser) {// user是数据库中原来的数据
         if(!oldUser) {
             // 通知浏览器删除userid cookie
             res.clearCookie('userid')
@@ -83,6 +83,7 @@ router.get('/msglist', function(req, res){
     const userid = req.cookies.userid;
     // 查询得到所有user文档数组
     UserModel.find(function(err, userDocs){
+        console.log(userDocs,"userDocsuserDocs")
          // 用对象存储所有user信息: key为user的_id, val为name和header组成的user对象
         const users = userDocs.reduce((users, user) => {
             users[user._id] = {username: user.username, header: user.header};

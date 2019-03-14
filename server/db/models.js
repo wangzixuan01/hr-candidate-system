@@ -14,7 +14,13 @@ const userSchema = mongoose.Schema({
     post: {type: String}, // 职位
     info: {type: String}, // 个人或职位简介
     company: {type: String}, // 公司名称
-    salary: {type: String} // 工资
+    salary: {type: String}, // 工资
+    experience:{type: String},
+    education:{type: String},
+    city:{type: String},
+    phone:{type: String},
+    email:{type: String},
+    infoType:{type: String}
 });
 const chatSchema = mongoose.Schema({
     from: {type: String, required: true}, // 发送用户的id
