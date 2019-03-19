@@ -1,0 +1,342 @@
+.jobList ul .item {
+    height: 91px;
+    position: relative;
+    margin-bottom: 6px;
+    background: #fff;
+}
+
+.jobList{
+    margin-top: 46px;
+    margin-bottom: 50px;
+}
+
+.jobList ul .item>a {
+    display: block;
+    height: 100%
+}
+
+.jobList ul .item:first-child a:after {
+    background-color: #fff
+}
+
+.jobList ul .item>a:after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    top: 0;
+    height: 1px;
+    background: #e5e9f3;
+    overflow: hidden;
+    -webkit-transform: scaleY(.5)
+}
+
+.jobList ul .item:active {
+    background-color: #f4f7f9
+}
+
+.jobList ul .item-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%
+}
+
+.jobList ul .item-border span {
+    display: block;
+    height: 1px;
+    background-color: #e5e9f3;
+    margin: 0 20px
+}
+
+.jobList ul .item .chatHead {
+    width: 59px;
+    height: 59px;
+    display: block;
+    border: none;
+    margin-left: 18px;
+    margin-top: 16px;
+    float: left;
+    border-radius: 5px
+}
+
+.jobList .text {
+    margin-left: 96px;
+    position: relative
+}
+
+.jobList .text h4 {
+    font-size: 15px;
+    color: #414a60;
+    line-height: 15px;
+    font-weight: 400;
+    padding-top: 18px;
+    margin-right: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.jobList .text .salary {
+    font-style: normal;
+    font-size: 19px;
+    color: #fc6c38;
+    position: absolute;
+    right: 19px;
+    top: 18px;
+    line-height: 15px
+}
+
+.jobList .text .name {
+    font-size: 12px;
+    color: #414a60;
+    line-height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 19px
+}
+
+.jobList .text .msg {
+    line-height: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 19px
+}
+
+.jobList .text .msg em {
+    font-style: normal;
+    font-size: 12px;
+    color: #8892ac;
+    margin-right: 14px;
+    display: inline-block
+}
+
+.jobList .loadmore {
+    font-size: 14px;
+    color: #8b96a6;
+    line-height: 48px;
+    display: block
+}
+
+.jobList li:after{
+    content: '';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both
+}
+
+.jobList ul .item .img-box {
+    width: 59px;
+    height: 59px;
+    display: block;
+    border: none;
+    float: left;
+    border-radius: 5px
+}
+
+.jobList ul .item {
+    height: 170px
+}
+
+
+a,b,body,button,dd,div,dl,em,footer,form,h1,h2,h3,h4,h5,h6,i,input,label,li,nav,p,select,span,td,textarea,u,ul {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent
+}
+
+li,ol,ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: #414a60
+}
+
+a:active,a:focus,a:hover,button,input,textarea {
+    outline: 0
+}
+
+a:active {
+    color: #55cbc4;
+    text-decoration: none;
+    -webkit-transition: all linear .2s;
+    transition: all linear .2s
+}
+
+img {
+    border: none
+}
+
+map area {
+    outline: 0
+}
+
+table {
+    border-collapse: collapse
+}
+
+body,button,input,option,select,td,textarea {
+    font-family: arial,verdana,helvetica,Microsoft Yahei,sans-serif;
+    -webkit-font-smoothing: antialiased
+}
+
+button,input[type=button],input[type=number],input[type=password],input[type=search],input[type=submit],input[type=tel],input[type=text],textarea {
+    -webkit-appearance: none
+}
+
+input::-webkit-search-cancel-button {
+    display: none
+}
+
+body {
+    /* background: #fff; */
+    line-height: 26px;
+    color: #7e8793;
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%!important
+}
+
+body,html {
+    height: 100%
+}
+
+body.page-white {
+    background: #fff
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both
+}
+
+.inner {
+    margin: 0 auto
+}
+
+.gray {
+    color: #9fa3af
+}
+
+.red {
+    color: #fc6c38
+}
+
+.gray-bg {
+    background-color: #f3f3f4
+}
+
+.vline {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    vertical-align: middle;
+    background: #e0e0e0;
+    margin: 0 10px
+}
+
+.vdot {
+    display: inline-block;
+    padding: 0 5px 0 3px
+}
+
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+    color: #c0c4cf
+}
+
+body ::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+    -webkit-border-radius: 0
+}
+
+body ::-webkit-scrollbar {
+    width: 4px
+}
+
+body ::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: #ddd;
+    -webkit-border-radius: 4px
+}
+
+body ::-webkit-scrollbar-thumb:hover {
+    height: 50px;
+    background-color: #ccc;
+    -webkit-border-radius: 4px
+}
+.wrap{
+    padding: 10px 18px 10px 25px;
+}
+
+.wrap .mainInfo{
+    height: 110px;
+}
+
+.wrap .tagList{
+    height: 50px;
+    border-top: 1px dashed #E0E0E0;
+    line-height: 50px;
+}
+.wrap .tagList .tag{
+    background: #2cc4b9;
+    color: #fff;
+    margin-right: 6px;
+    border-radius: 3px;
+    padding: 3px;
+}
+.wrap .mainInfo .info{
+    width: 70%;
+    float: left;
+}
+.wrap .mainInfo .right{
+    float: right;
+    height: 100%;
+    width: 30%;
+}
+.wrap .mainInfo .right img{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: block;
+}
+.wrap .mainInfo .right .seekName{
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #63c1ba;
+}
+.wrap .mainInfo .info h3{
+    color: #63c1ba;
+    padding: 5px;
+}
+.wrap .mainInfo .info .descTop .salary{
+    font-size: 18px;
+    color: #fc6c38;
+    margin-right: 10px;
+}
+
+.wrap .mainInfo .info .descTop .jobCategory{
+    font-size: 18px;
+}
+.wrap .mainInfo .info .descTop{
+    padding: 4px;
+}
+.wrap .mainInfo .info .descCenter{
+    padding: 4px;
+}
+
+.wrap .mainInfo .info .descCenter .postion{
+    margin-right: 6px;
+}
+.wrap .mainInfo .info .descCenter .experience{
+    margin-right: 6px;
+}

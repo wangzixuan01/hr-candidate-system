@@ -5,6 +5,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {List, Badge} from 'antd-mobile';
 import QueueAnim from 'rc-queue-anim';
+import style from './message.css'
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -14,6 +15,7 @@ const Brief = Item.Brief;
 2. 得到所有lastMsg的数组
 3. 对数组进行排序(按create_time降序)
 */
+
 function getListMsgs(chatMsgs, userid) {
     // 1. 找出每个聊天的lastMsg, 并用一个对象容器来保存 {chat_id:lastMsg}
     const lastMsgObjs = {};
@@ -56,6 +58,7 @@ class Message extends Component {
         const {users, chatMsgs} = this.props.chat;
          // 对chatMsgs按chat_id进行分组
         const lastMsgs = getListMsgs(chatMsgs, user._id);
+        console.log(lastMsgs,"lastMsgs")
         return (
             <List style={{marginTop:50, marginBottom: 50}}>
                 <QueueAnim type='scale' delay={100}>
@@ -66,17 +69,13 @@ class Message extends Component {
                             // 得到目标用户的信息
                             const targetUser = users[targetUserId]
                             return (
-                            <Item
-                                key={msg._id}
-                                extra={<Badge text={msg.unReadCount} />}
-                                thumb={targetUser.header ? require(`../../assets/images/${targetUser.header}.png`) : null}
-                                arrow='horizontal'
-                                onClick={() => this.props.history.push(`/chat/${targetUserId}`)}
-                            >
-                                {msg.content}
-                                <Brief>{targetUser.username}</Brief>
-                            </Item>
-                            )
+                            <Item className={style.itemList} key={msg._id} extra={<Badge text={msg.unReadCount} />}  arrow='horizontal' onClick={() => this.props.history.push(`/chat/${targetUserId}`)}>
+                                <img className={style.chatHead} src={targetUser.header ? require(`../../assets/images/${targetUser.header}.png`) : null} />
+                                <div className={style.contentWrap}>
+                                    <div className={style.nickName}>{targetUser.username}</div>
+                                    <div className={style.content}>{msg.content}</div>
+                                </div>
+                            </Item>)
                         })
                     }
                     </QueueAnim>

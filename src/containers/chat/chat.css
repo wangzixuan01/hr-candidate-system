@@ -1,0 +1,68 @@
+.fromMessage{
+    height: 40px;
+    max-width: 400px;
+    margin-bottom: 16px;
+}
+.fromContent{
+    padding: 9px 13px;
+    min-height: 25px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.fromContent.left{
+    background: #ffffff;
+}
+.fromContent.right{
+    background: #b2e281;
+    color: #000;
+}
+.left{
+    float: left;
+    color: #141414;
+    margin-left: 4px;
+}
+.right{
+    float:right;
+    margin-right: 4px;
+    
+}
+
+.chatHead{
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.chatList{
+    background: #eeeeee !important;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0 10px;
+}
+
+.fromContent:after,.fromContent:before {
+    position: absolute;
+    top: 14px;
+    border: 6px solid transparent;
+    content: " "
+}
+
+.fromContent.left:after,.fromContent.left:before {
+    right: 100%
+}
+
+.fromContent.left:after {
+    border-right-color: #fff;
+    border-right-width: 4px
+}
+
+.fromContent.right:after,.fromContent.right:before {
+    left: 100%
+}
+
+.fromContent.right:after {
+    border-left-color: #fff
+}
+html{
+    background: #eeeeee;
+}

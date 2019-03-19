@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import {NavBar, List, InputItem, Grid, Icon} from 'antd-mobile';
 import {connect} from 'react-redux';
 import {sendMsg, readMsg} from '../../redux/actions';
+import style from './chat.css'
 
 const Item = List.Item;
 
@@ -87,39 +88,30 @@ class Chat extends Component {
         const targetIcon = targetHeader ? require(`../../assets/images/${targetHeader}.png`) : null;
         return (
             <div id='chat-page'>
-                <NavBar
-                    icon={<Icon type='left'/>}
-                    className='stick-top'
-                    onLeftClick={()=> this.props.history.goBack()} //点击箭头返回上一页
-                >
+                <NavBar icon={<Icon type='left'/>} className='stick-top' onLeftClick={()=> this.props.history.goBack()}> 
                     {users[targetId].username}
                 </NavBar>
-                <List style={{marginTop:50, marginBottom: 50}}>
+                <div className={style.chatList}>
                         {
                             msgs.map(msg => {
                             if(targetId===msg.from) {// 对方发给我的
                                 return (
-                                    <Item
-                                        key={msg._id}
-                                        thumb={targetIcon}
-                                    >
-                                        {msg.content}
-                                    </Item>
+                                    <div className={`${style.fromMessage}`} key={msg._id}>
+                                        <img src={targetIcon} className={`${style.chatHead} ${style.left}`} />
+                                        <div className={`${style.fromContent} ${style.left}`}>{msg.content}</div>
+                                    </div>
                                 )
                             } else { // 我发给对方的
                                 return (
-                                    <Item
-                                        key={msg._id}
-                                        className='chat-me'
-                                        extra='我'
-                                    >
-                                        {msg.content}
-                                    </Item>
+                                    <div className={`${style.fromMessage}`} key={msg._id}>
+                                        <img src={targetIcon} className={`${style.chatHead} ${style.right}`} />
+                                        <div className={`${style.fromContent} ${style.right}`}>{msg.content}</div>
+                                    </div>
                                 )
                             }
                             })
                         }
-                </List>
+                </div>
                 <div className='am-tab-bar'>
                 <InputItem
                     placeholder="请输入"

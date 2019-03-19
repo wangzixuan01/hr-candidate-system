@@ -44,8 +44,8 @@ module.exports = function override(config, env) {
           options: {
             // theme vars, also can use theme.js instead of this.
             modifyVars: {
-              "@brand-primary": "#ac8740", // 正常
-              "@brand-primary-tap": "#a58a32", // 按下
+              "@brand-primary": "#2e3238", // 正常
+              "@brand-primary-tap": "#3a3f45", // 按下
             },
           },
         },

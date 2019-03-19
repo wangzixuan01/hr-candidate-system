@@ -2,12 +2,9 @@
 用户列表的UI组件
 */
 import React, {Component} from 'react';
-import {Card, WingBlank, WhiteSpace} from 'antd-mobile';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
-import QueueAnim from 'rc-queue-anim';
-const Header = Card.Header;
-const Body = Card.Body;
+import style from './user-list.css'
 
 class UserList extends Component {
     static propTypes = {
@@ -16,29 +13,60 @@ class UserList extends Component {
 
     render () {
         return (
-            <WingBlank style={{marginBottom:60, marginTop:50}}>
-            <QueueAnim type='scale' delay={100}>
+            <div className = {style.jobList}>
+                <ul>
                 {
-                    this.props.userList.map(user =>(
-                        <div key={user._id}>
-                            <WhiteSpace/>
-                            <Card onClick={() => this.props.history.push(`/chat/${user._id}`)}>
-                            <Header
-                                thumb={user.header ? require(`../../assets/images/${user.header}.png`) : null}
-                                extra={user.username}
-                            />
-                            <Body>
-                                <div>职位:{user.post}</div>
-                                {user.company ? <div>公司: {user.company}</div> : null} 
-                                {user.salary ? <div>公司: {user.salary}</div> : null}
-                                <div>描述: {user.info}</div>
-                            </Body>
-                            </Card>
-                        </div>
-                    ))
+                    this.props.userList.map((user,index) =>{
+                        
+                        return (
+                            user.type === "Boss"?<li key={"user" + index} className = {style.item} onClick={() => this.props.history.push(`/chat/${user._id}`)}>
+                                <a className = {style.wrap}>
+                                    <img className={style.chatHead} src= {user.header ? require(`../../assets/images/${user.header}.png`) : null}/>
+                                    <div className = {style.text}>
+                                        <div className = { style.title}>
+                                            <h4>{user.post}</h4>
+                                            <span className={style.salary}>{user.salary}</span>
+                                            <div className = {style.name}>{user.company}</div>
+                                            <div className = {style.msg}>
+                                                <em>{user.city}</em>
+                                                <em>{user.experience}</em>
+                                                <em>{user.education}</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>:<li key={"user" + index} className = {style.item} onClick={() => this.props.history.push(`/chat/${user._id}`)}>
+                                <a className = {style.wrap}>
+                                    <div className = {style.mainInfo}>
+                                        <div className = {style.info}>
+                                            <h3>{user.post}</h3>
+                                            <div className = {style.descTop}>
+                                                <span className={style.salary}>{user.salary}</span>
+                                                <span className={style.jobCategory}>{user.jobCategory}</span>
+                                            </div>
+                                            <div className = {style.descCenter}>
+                                                <span className={style.postion}>{user.city}</span>
+                                                <span className={style.experience}>{user.experience}</span>
+                                                <span>硕士</span>
+                                            </div>
+                                        </div>
+                                        <div className = {style.right}>
+                                            <img src= {user.header ? require(`../../assets/images/${user.header}.png`) : null}/>
+                                            <span className = {style.seekName}>{user.username}</span>
+                                        </div>
+                                    </div>
+                                    <div className={style.tagList}>
+                                        <span className={style.tag}>完美主义</span>
+                                        <span className={style.tag}>完美主义</span>
+                                    </div>
+                                </a>
+                            </li>
+                        )
+
+                    })
                 }
-                </QueueAnim>
-            </WingBlank>
+                </ul>
+            </div>
         )
     }
 }
