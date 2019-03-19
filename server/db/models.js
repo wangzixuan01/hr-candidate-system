@@ -20,7 +20,13 @@ const userSchema = mongoose.Schema({
     city:{type: String},
     phone:{type: String},
     email:{type: String},
-    infoType:{type: String}
+    infoType:{type: String},
+    industry:{type:String},
+    jobNature:{type:String},
+    educationExperience:{type:String},
+    selfTag:{type:Array},
+    financingStage:{type:String},
+    employeeNum:{type:String}
 });
 const chatSchema = mongoose.Schema({
     from: {type: String, required: true}, // 发送用户的id

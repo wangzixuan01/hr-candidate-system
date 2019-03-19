@@ -58,7 +58,6 @@ class Message extends Component {
         const {users, chatMsgs} = this.props.chat;
          // 对chatMsgs按chat_id进行分组
         const lastMsgs = getListMsgs(chatMsgs, user._id);
-        console.log(lastMsgs,"lastMsgs")
         return (
             <List style={{marginTop:50, marginBottom: 50}}>
                 <QueueAnim type='scale' delay={100}>
@@ -68,11 +67,12 @@ class Message extends Component {
                             const targetUserId = msg.to===user._id ? msg.from : msg.to
                             // 得到目标用户的信息
                             const targetUser = users[targetUserId]
+                            console.log(targetUser,"targetUser")
                             return (
                             <Item className={style.itemList} key={msg._id} extra={<Badge text={msg.unReadCount} />}  arrow='horizontal' onClick={() => this.props.history.push(`/chat/${targetUserId}`)}>
-                                <img className={style.chatHead} src={targetUser.header ? require(`../../assets/images/${targetUser.header}.png`) : null} />
+                                <img className={style.chatHead} src={targetUser&&targetUser.header ? require(`../../assets/images/${targetUser.header}.png`) : null} />
                                 <div className={style.contentWrap}>
-                                    <div className={style.nickName}>{targetUser.username}</div>
+                                    <div className={style.nickName}>{targetUser?targetUser.username:null}</div>
                                     <div className={style.content}>{msg.content}</div>
                                 </div>
                             </Item>)

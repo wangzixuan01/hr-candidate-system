@@ -1,0 +1,46 @@
+/**
+ * Created by ruichengping on 2017/3/12.
+ */
+export default[
+    {
+        value:"北京",
+        label:"北京"
+    },
+    {
+        value:"上海",
+        label:"上海"
+    },
+    {
+        value:"广州",
+        label:"广州"
+    },
+    {
+        value:"深圳",
+        label:"深圳"
+    },
+    {
+        value:"杭州",
+        label:"杭州"
+    },
+    {
+        value:"武汉",
+        label:"武汉"
+    },
+    {
+        value:"南京",
+        label:"南京"
+    },
+    {
+        value:"成都",
+        label:"成都"
+    },
+    {
+        value:"长沙",
+        label:"长沙"
+    },
+    {
+        value:"哈尔滨",
+        label:"哈尔滨"
+    },
+
+];

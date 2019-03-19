@@ -1,0 +1,37 @@
+/**
+ * Created by ruichengping on 2017/3/12.
+ */
+export default [
+    {
+        value:"未融资",
+        label:"未融资",
+    },
+    {
+        value:"天使轮",
+        label:"天使轮",
+    },
+    {
+        value:"A轮",
+        label:"A轮",
+    },
+    {
+        value:"B轮",
+        label:"B轮",
+    },
+    {
+        value:"C轮",
+        label:"C轮",
+    },
+    {
+        value:"D轮及以上",
+        label:"D轮及以上",
+    },
+    {
+        value:"上市公司",
+        label:"上市公司",
+    },
+    {
+        value:"不需要融资",
+        label:"不需要融资",
+    }
+];

@@ -1,0 +1,29 @@
+/**
+ * Created by ruichengping on 2017/3/12.
+ */
+export default[
+    {
+        value:"应届毕业生",
+        label:"应届毕业生"
+    },
+    {
+        value:"3年及以下",
+        label:"3年及以下"
+    },
+    {
+        value:"3-5年",
+        label:"3-5年"
+    },
+    {
+        value:"5-10年",
+        label:"5-10年"
+    },
+    {
+        value:"10年以上",
+        label:"10年以上"
+    },
+    {
+        value:"不要求",
+        label:"不要求"
+    }
+];

@@ -1,0 +1,29 @@
+/**
+ * Created by ruichengping on 2017/3/13.
+ */
+export default [
+    {
+        value:"少于15人",
+        label:"少于15人",
+    },
+    {
+        value:"15-50人",
+        label:"15-50人",
+    },
+    {
+        value:"50-150人",
+        label:"50-150人"
+    },
+    {
+        value:"150-500人",
+        label:"150-500人"
+    },
+    {
+        value:"500-2000人",
+        label:"500-2000人"
+    },
+    {
+        value:"2000人以上",
+        label:"2000人以上"
+    }
+];

@@ -21,18 +21,26 @@ class UserList extends Component {
                         return (
                             user.type === "Boss"?<li key={"user" + index} className = {style.item} onClick={() => this.props.history.push(`/chat/${user._id}`)}>
                                 <a className = {style.wrap}>
-                                    <img className={style.chatHead} src= {user.header ? require(`../../assets/images/${user.header}.png`) : null}/>
-                                    <div className = {style.text}>
-                                        <div className = { style.title}>
-                                            <h4>{user.post}</h4>
-                                            <span className={style.salary}>{user.salary}</span>
-                                            <div className = {style.name}>{user.company}</div>
-                                            <div className = {style.msg}>
-                                                <em>{user.city}</em>
-                                                <em>{user.experience}</em>
-                                                <em>{user.education}</em>
+                                    <div>
+                                        <img className={style.chatHead} src= {user.header ? require(`../../assets/images/${user.header}.png`) : null}/>
+                                        <div className = {style.text}>
+                                            <div className = { style.title}>
+                                                <h4>{user.post}</h4>
+                                                <span className={style.salary}>{user.salary}</span>
+                                                <div className = {style.name}><span>{user.username}</span>&nbsp;<span>{user.company}</span></div>
+                                                <div className = {style.msg}>
+                                                    <em>{user.city}</em>
+                                                    <em>{user.experience}</em>
+                                                    <em>{user.educationExperience}</em>
+                                                </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className={style.tagList} style={{marginTop:10}}>
+                                        <span className={style.tag}>{user.financingStage}</span>
+                                        <span className={style.tag}>{user.employeeNum}</span>
+                                        <span className={style.tag}>{user.industry}</span>
+                                        <span className={style.tag}>{user.jobNature}</span>
                                     </div>
                                 </a>
                             </li>:<li key={"user" + index} className = {style.item} onClick={() => this.props.history.push(`/chat/${user._id}`)}>
@@ -42,12 +50,12 @@ class UserList extends Component {
                                             <h3>{user.post}</h3>
                                             <div className = {style.descTop}>
                                                 <span className={style.salary}>{user.salary}</span>
-                                                <span className={style.jobCategory}>{user.jobCategory}</span>
+                                                <span className={style.jobCategory}>{user.industry}</span>
                                             </div>
                                             <div className = {style.descCenter}>
                                                 <span className={style.postion}>{user.city}</span>
-                                                <span className={style.experience}>{user.experience}</span>
-                                                <span>硕士</span>
+                                                <span className={style.school}>{user.education}</span>
+                                                <span className={style.experience}>{user.educationExperience}</span>
                                             </div>
                                         </div>
                                         <div className = {style.right}>
@@ -56,8 +64,9 @@ class UserList extends Component {
                                         </div>
                                     </div>
                                     <div className={style.tagList}>
-                                        <span className={style.tag}>完美主义</span>
-                                        <span className={style.tag}>完美主义</span>
+                                        <span className={style.tag}>{user.selfTag}</span>
+                                        <span className={style.tag}>{user.jobNature}</span>
+                                        <span className={style.tag}>{user.experience}</span>
                                     </div>
                                 </a>
                             </li>

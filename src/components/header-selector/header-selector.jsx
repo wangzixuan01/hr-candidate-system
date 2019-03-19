@@ -32,7 +32,7 @@ export default class HeaderSelector extends Component {
 	}
 	render () {
 		const {icon} = this.state;
-		const listHeader = !icon ? '请选择头像' : (<div>以选择的头像:<img src={icon} alt='头像' /></div>)
+		const listHeader = !icon ? '请选择头像' : (<div style={{height:100}}><div>已选择的头像:</div><img style={{width:80,height:80}} src={icon} alt='头像' /></div>)
 		return (
 			<List renderHeader={() => listHeader}>
 				<Grid data={this.headerList} columnNum={5} onClick={this.handleClick}></Grid>
