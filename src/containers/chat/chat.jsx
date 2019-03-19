@@ -152,9 +152,11 @@ class Chat extends Component {
                     </span>
                     }
                 />
-                <Button style={{marginTop:10,marginBottom:10,float:"left"}} type="primary" size="small" onClick={()=>this.sendSelfMsg("email")}>发送邮箱地址</Button>
-                <Button style={{marginTop:10,marginBottom:10,marginLeft:28,float:"left"}} type="primary" size="small"  onClick={()=>this.sendSelfMsg("phone")}>发送手机号码</Button>
-                <Button style={{marginTop:10,marginBottom:10,float:"right"}} type="primary" size="small"  onClick={()=>this.sendSelfMsg("info")}>发送岗位信息</Button>
+                <div style={{background:"#EEEEEE",width:"100%",height:50}}>
+                    <Button style={{marginTop:10,marginBottom:10,float:"left"}} type="primary" size="small" onClick={()=>this.sendSelfMsg("email")}>发送邮箱地址</Button>
+                    <Button style={{marginTop:10,marginBottom:10,marginLeft:28,float:"left"}} type="primary" size="small"  onClick={()=>this.sendSelfMsg("phone")}>发送手机号码</Button>
+                    <Button style={{marginTop:10,marginBottom:10,float:"right"}} type="primary" size="small"  onClick={()=>this.sendSelfMsg("info")}>发送岗位信息</Button>
+                </div>
                 {this.state.isShow ? (
                     <Grid
                         data={this.emojis}

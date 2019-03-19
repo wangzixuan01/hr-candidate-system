@@ -35,7 +35,6 @@ class JobSeekerInfo extends Component {
         infoType:'jobSeeker'
     }
     handleChange = (name, val) => {
-        console.log(val,"callllll")
         this.setState({
             [name]: val
         })
