@@ -22,7 +22,6 @@ const Brief = Item.Brief;
 class User extends Component {
     constructor(props) {
         super(props)
-console.log(props,"propssssss")
         this.state = {
             edit:true,
             header: props.user.header, // 头像名称
@@ -199,7 +198,7 @@ console.log(props,"propssssss")
                                     ))}
                                 </List>
                                 <TextareaItem title='自我描述' value={this.state.info}  placeholder='请输入自我描述' rows={3} onChange={val => {this.handleChange('info', val)}}></TextareaItem>
-                                <Button style={{width:180,margin:"10px auto 10px",marginBottom:10}} type="primary"  onClick={this.save}>保存</Button>
+                                <Button style={{width:180,margin:"10px auto 10px",marginBottom:10}} type="primary" size="small"  onClick={this.save}>保存</Button>
                             </div>
                         }
                 </List>

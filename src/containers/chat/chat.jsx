@@ -2,17 +2,20 @@
 对话聊天的路由组件
  */
 import React, {Component} from 'react';
-import {NavBar, List, InputItem, Grid, Icon} from 'antd-mobile';
+import {NavBar, List, InputItem, Grid, Icon, Button} from 'antd-mobile';
 import {connect} from 'react-redux';
 import {sendMsg, readMsg} from '../../redux/actions';
 import style from './chat.css'
-
-const Item = List.Item;
-
 class Chat extends Component {
-    state = {
-        content: '', //消息内容
-        isShow: false //默认关闭表情列表
+    constructor(props) {
+        super(props)
+        this.state = {
+            content: '', //消息内容
+            isShow: false, //默认关闭表情列表
+            emailMsg:props.user.email,
+            phoneMsg:props.user.phone,
+            infoMsg:props.user.info,
+        }
     }
     // 在第一次render()之前回调
     componentWillMount () {
@@ -70,6 +73,30 @@ class Chat extends Component {
         })
     }
 
+    sendSelfMsg = (type) =>{
+        const from = this.props.user._id; //获取发送方
+        const to = this.props.match.params.userid; //获取接收方
+        let content = null
+        if(type==="email"){
+            content = this.state.emailMsg.trim()
+            if(content){
+                this.props.sendMsg({from, to, content});
+            }
+        }
+        if(type==="phone"){
+            content = this.state.phoneMsg.trim()
+            if(content){
+                this.props.sendMsg({from, to, content});
+            }
+        }
+        if(type==="info"){
+            content = this.state.infoMsg.trim()
+            if(content){
+                this.props.sendMsg({from, to, content});
+            }
+        }
+    }
+
     render () {
         const {user} = this.props;
         const {users, chatMsgs} = this.props.chat;
@@ -117,14 +144,17 @@ class Chat extends Component {
                     placeholder="请输入"
                     value={this.state.content}
                     onChange={val => this.setState({content: val})}
-                    onFocus={() => this.setState({isShow: false})} //获取焦点隐藏表情面板
                     extra={
                     <span>
                         <span onClick={this.toggleShow} style={{marginRight:5}}>😊</span>
                         <span onClick={this.handleSend}>发送</span>
+                        
                     </span>
                     }
                 />
+                <Button style={{marginTop:10,marginBottom:10,float:"left"}} type="primary" size="small" onClick={()=>this.sendSelfMsg("email")}>发送邮箱地址</Button>
+                <Button style={{marginTop:10,marginBottom:10,marginLeft:28,float:"left"}} type="primary" size="small"  onClick={()=>this.sendSelfMsg("phone")}>发送手机号码</Button>
+                <Button style={{marginTop:10,marginBottom:10,float:"right"}} type="primary" size="small"  onClick={()=>this.sendSelfMsg("info")}>发送岗位信息</Button>
                 {this.state.isShow ? (
                     <Grid
                         data={this.emojis}
@@ -136,7 +166,6 @@ class Chat extends Component {
                         }}
                     />
                 ) : null}
-
                 </div>
             </div>
         )
