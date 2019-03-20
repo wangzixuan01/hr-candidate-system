@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {List, Badge} from 'antd-mobile';
 import QueueAnim from 'rc-queue-anim';
 import style from './message.css'
+import {formatUnixtimestamp} from '../../utils/index';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -69,7 +70,8 @@ class Message extends Component {
                             const targetUser = users[targetUserId]
                             console.log(targetUser,"targetUser")
                             return (
-                            <Item className={style.itemList} key={msg._id} extra={<Badge text={msg.unReadCount} />}  arrow='horizontal' onClick={() => this.props.history.push(`/chat/${targetUserId}`)}>
+                            <Item className={style.itemList} key={msg._id} extra={<div><span style={{fontSize:"14px"}}>{formatUnixtimestamp(msg.create_time)}</span></div>}  arrow='horizontal' onClick={() => this.props.history.push(`/chat/${targetUserId}`)}>
+                                <Badge style={{position:"absolute",display:"block",right:"86px",top:"-20px"}} text={msg.unReadCount} />
                                 <img className={style.chatHead} src={targetUser&&targetUser.header ? require(`../../assets/images/${targetUser.header}.png`) : null} />
                                 <div className={style.contentWrap}>
                                     <div className={style.nickName}>{targetUser?targetUser.username:null}</div>
